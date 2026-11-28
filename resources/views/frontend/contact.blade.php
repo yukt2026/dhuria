@@ -212,10 +212,10 @@
             <div>
                 <div class="dh-qc-icon-box"><i class="bi bi-telephone"></i></div>
                 <div class="dh-qc-tag">HELPLINE PHONE</div>
-                <a href="tel:+919220251059" class="dh-qc-val">+91 9220251059</a>
+                <a href="tel:{{ \App\Models\Setting::get('site_phone', '+91 9318445297') }}" class="dh-qc-val">{{ \App\Models\Setting::get('site_phone', '+91 9318445297') }}</a>
                 <div class="dh-qc-note">Mon - Sat: 10:00 AM - 07:00 PM IST</div>
             </div>
-            <a href="tel:+919220251059" class="dh-qc-link">Call Now <i class="bi bi-arrow-right"></i></a>
+            <a href="tel:{{ \App\Models\Setting::get('site_phone', '+91 9318445297') }}" class="dh-qc-link">Call Now <i class="bi bi-arrow-right"></i></a>
         </div>
 
         <div class="dh-quick-card">
@@ -225,17 +225,17 @@
                 <div class="dh-qc-val">WhatsApp Support</div>
                 <div class="dh-qc-note">Quick responses within 15 minutes</div>
             </div>
-            <a href="https://wa.me/919220251059" target="_blank" class="dh-qc-link">Start WhatsApp Chat <i class="bi bi-arrow-right"></i></a>
+            <a href="https://wa.me/{{ \App\Models\Setting::get('whatsapp_number', '919318445297') }}" target="_blank" class="dh-qc-link">Start WhatsApp Chat <i class="bi bi-arrow-right"></i></a>
         </div>
 
         <div class="dh-quick-card">
             <div>
                 <div class="dh-qc-icon-box"><i class="bi bi-envelope"></i></div>
                 <div class="dh-qc-tag">EMAIL INQUIRIES</div>
-                <a href="mailto:floramade517@gmail.com" class="dh-qc-val" style="font-size:0.95rem;">floramade517@gmail.com</a>
+                <a href="mailto:{{ \App\Models\Setting::get('site_email', 'dhuriaayurveda@gmail.com') }}" class="dh-qc-val" style="font-size:0.95rem;">{{ \App\Models\Setting::get('site_email', 'dhuriaayurveda@gmail.com') }}</a>
                 <div class="dh-qc-note">Response within 24 hours guaranteed</div>
             </div>
-            <a href="mailto:floramade517@gmail.com" class="dh-qc-link">Send Email <i class="bi bi-arrow-right"></i></a>
+            <a href="mailto:{{ \App\Models\Setting::get('site_email', 'dhuriaayurveda@gmail.com') }}" class="dh-qc-link">Send Email <i class="bi bi-arrow-right"></i></a>
         </div>
     </div>
 
@@ -308,7 +308,7 @@
                 <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.5; margin-bottom:18px;">
                     Have queries regarding diabetes management, metabolic balance, or digestive health? Connect directly with our certified practitioners.
                 </p>
-                <a href="https://wa.me/919220251059?text=Hello%20Dhuria%20Healthcare,%20I%20would%20like%20to%20consult%20an%20Ayurvedic%20Counselor" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:#d4af37; color:#061528; padding:10px 22px; border-radius:30px; font-size:0.85rem; font-weight:800; text-decoration:none;">
+                <a href="https://wa.me/{{ \App\Models\Setting::get('whatsapp_number', '919318445297') }}?text=Hello%20Dhuria%20Healthcare,%20I%20would%20like%20to%20consult%20an%20Ayurvedic%20Counselor" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:#d4af37; color:#061528; padding:10px 22px; border-radius:30px; font-size:0.85rem; font-weight:800; text-decoration:none;">
                     <span>BOOK CONSULTATION</span> <i class="bi bi-arrow-right"></i>
                 </a>
             </div>

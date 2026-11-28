@@ -93,7 +93,7 @@
 
     <div class="dh-policy-section">
         <div class="dh-policy-sec-title">7-Day Replacement Guarantee</div>
-        <p class="dh-policy-text">If you receive an item that is damaged during transit, defective, or incorrect, you may request a free replacement within 7 calendar days of delivery. Please email unboxing photos to <a href="mailto:floramade517@gmail.com" style="color:#d4af37; font-weight:700;">floramade517@gmail.com</a>.</p>
+        <p class="dh-policy-text">If you receive an item that is damaged during transit, defective, or incorrect, you may request a free replacement within 7 calendar days of delivery. Please email unboxing photos to <a href="mailto:dhuriaayurveda@gmail.com" style="color:#d4af37; font-weight:700;">dhuriaayurveda@gmail.com</a>.</p>
     </div>
 
     <div class="dh-policy-section">
@@ -106,14 +106,14 @@
         <h3 style="font-family:'Cinzel',serif; font-size:1.8rem; font-weight:800; color:#fff; margin:0 0 8px 0;">Still have questions?</h3>
         <p style="font-size:0.9rem; color:#cbd5e1; margin-bottom:25px;">Our support team is ready to resolve your return or refund inquiries.</p>
         <div class="dh-qb-grid">
-            <a href="mailto:floramade517@gmail.com" class="dh-qb-card">
+            <a href="mailto:dhuriaayurveda@gmail.com" class="dh-qb-card">
                 <i class="bi bi-envelope" style="font-size:1.4rem; display:block; margin-bottom:6px;"></i>
-                <span style="font-size:0.8rem; font-weight:700;">floramade517@gmail.com</span>
+                <span style="font-size:0.8rem; font-weight:700;">dhuriaayurveda@gmail.com</span>
                 <span style="display:block; font-size:0.7rem; color:#cbd5e1;">Email Support</span>
             </a>
-            <a href="tel:+919220251059" class="dh-qb-card">
+            <a href="tel:+919318445297" class="dh-qb-card">
                 <i class="bi bi-telephone" style="font-size:1.4rem; display:block; margin-bottom:6px;"></i>
-                <span style="font-size:0.8rem; font-weight:700;">+91 9220251059</span>
+                <span style="font-size:0.8rem; font-weight:700;">+91 9318445297</span>
                 <span style="display:block; font-size:0.7rem; color:#cbd5e1;">Mon - Sat (10am - 7pm)</span>
             </a>
             <a href="{{ route('contact') }}" class="dh-qb-card">

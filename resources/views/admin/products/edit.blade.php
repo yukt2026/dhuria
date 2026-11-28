@@ -167,9 +167,10 @@
                             <tr class="bg-slate-50 text-slate-500 text-[10px] font-extrabold uppercase tracking-wider border-b border-slate-200">
                                 <th class="p-2.5">Pack Name *</th>
                                 <th class="p-2.5">Badge / Savings Subtitle</th>
-                                <th class="p-2.5 w-24">Units (Qty) *</th>
-                                <th class="p-2.5 w-28">Multiplier</th>
-                                <th class="p-2.5 w-32">Custom Price (&#8377;)</th>
+                                <th class="p-2.5 w-20">Units (Qty) *</th>
+                                <th class="p-2.5 w-24">Multiplier</th>
+                                <th class="p-2.5 w-28">Custom Price (&#8377;)</th>
+                                <th class="p-2.5 w-28 text-emerald-700">Selling Price</th>
                                 <th class="p-2.5 w-12 text-center">Action</th>
                             </tr>
                         </thead>
@@ -196,9 +197,12 @@
                                         <input type="number" step="0.01" min="0" :name="'pack_sizes[' + index + '][custom_price]'" x-model="pack.custom_price" placeholder="Optional"
                                                class="w-full border border-slate-200 rounded-lg px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-amber-500 focus:border-amber-500 bg-white">
                                     </td>
+                                    <td class="p-2">
+                                        <span class="inline-block bg-emerald-50 text-emerald-800 border border-emerald-200 font-extrabold text-xs px-2 py-1 rounded-md" x-text="'₹' + calculatePrice(pack).toLocaleString('en-IN')"></span>
+                                    </td>
                                     <td class="p-2 text-center">
                                         <button type="button" @click="removePack(index)" class="text-rose-500 hover:text-rose-700 p-1.5 rounded-lg hover:bg-rose-50 transition cursor-pointer" title="Delete">
-                                            <i class="fa-solid fa-trash-can"></i>
+                                             <i class="fa-solid fa-trash-can"></i>
                                         </button>
                                     </td>
                                 </tr>
@@ -212,7 +216,7 @@
                         <i class="fa-solid fa-plus text-[10px]"></i>
                         <span>Add Another Pack Option</span>
                     </button>
-                    <span class="text-[11px] text-slate-400">Multiplier formula: (Single Price &times; Multiplier) &rarr; e.g. Pack of 2 &times; 1.85 gives 15% discount.</span>
+                    <span class="text-[11px] text-slate-400">Formula: Multiplier &times; Product Sale Price. If Custom Price &le; 50, it acts as % discount.</span>
                 </div>
 
                 <!-- Live Preview on Admin Screen -->
@@ -220,10 +224,11 @@
                     <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block mb-2">Live Storefront Preview</span>
                     <div class="flex flex-wrap gap-2.5">
                         <template x-for="(pack, index) in packs" :key="index">
-                            <div class="border rounded-xl px-4 py-2 text-center transition"
+                            <div class="border rounded-xl px-4 py-2.5 text-center transition min-w-[110px]"
                                  :class="index === 0 ? 'border-amber-500 bg-amber-50/50 shadow-xs' : 'border-slate-200 bg-white'">
                                 <span class="block font-bold text-slate-800 text-xs" x-text="pack.name || 'Pack Name'"></span>
                                 <span class="block font-semibold text-emerald-600 text-[10px]" x-text="pack.badge || ''"></span>
+                                <span class="block font-extrabold text-slate-900 text-xs mt-1" x-text="'₹' + calculatePrice(pack).toLocaleString('en-IN')"></span>
                             </div>
                         </template>
                     </div>
@@ -491,6 +496,21 @@ function packManager() {
     return {
         enabled: {{ ($product->pack_sizes === null || (is_array($product->pack_sizes) && count($product->pack_sizes) > 0)) ? 'true' : 'false' }},
         packs: @json($product->formatted_pack_sizes),
+        calculatePrice(pack) {
+            const saleInput = parseFloat(document.querySelector('input[name="sale_price"]')?.value);
+            const regInput = parseFloat(document.querySelector('input[name="price"]')?.value);
+            const basePrice = (saleInput && saleInput > 0) ? saleInput : ((regInput && regInput > 0) ? regInput : 0);
+            const custom = parseFloat(pack.custom_price);
+            const qty = parseInt(pack.quantity) || 1;
+            if (custom > 0) {
+                if (custom <= 50 && basePrice >= 100) {
+                    return Math.round(basePrice * qty * (1 - (custom / 100)));
+                }
+                return Math.round(custom);
+            }
+            const mult = parseFloat(pack.multiplier) || qty;
+            return Math.round(basePrice * mult);
+        },
         addPack() {
             const nextQty = this.packs.length + 1;
             this.packs.push({

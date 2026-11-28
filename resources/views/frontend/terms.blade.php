@@ -188,7 +188,7 @@
             <span class="dh-policy-num">7</span> Contact Information
         </div>
         <p class="dh-policy-text">
-            For questions regarding these Terms &amp; Conditions, reach our legal desk at <a href="mailto:floramade517@gmail.com" style="color:#d4af37; font-weight:700;">floramade517@gmail.com</a> or phone helpline <a href="tel:+919220251059" style="color:#d4af37; font-weight:700;">+91 9220251059</a>.
+            For questions regarding these Terms &amp; Conditions, reach our legal desk at <a href="mailto:dhuriaayurveda@gmail.com" style="color:#d4af37; font-weight:700;">dhuriaayurveda@gmail.com</a> or phone helpline <a href="tel:+919318445297" style="color:#d4af37; font-weight:700;">+91 9318445297</a>.
         </p>
     </div>
 
@@ -197,14 +197,14 @@
         <h3 class="dh-qb-title">Still have questions?</h3>
         <p class="dh-qb-sub">Our practitioners and support team are here to help you with any queries regarding our policies or rituals.</p>
         <div class="dh-qb-grid">
-            <a href="mailto:floramade517@gmail.com" class="dh-qb-card">
+            <a href="mailto:dhuriaayurveda@gmail.com" class="dh-qb-card">
                 <i class="bi bi-envelope" style="font-size:1.4rem; display:block; margin-bottom:6px;"></i>
-                <span style="font-size:0.8rem; font-weight:700;">floramade517@gmail.com</span>
+                <span style="font-size:0.8rem; font-weight:700;">dhuriaayurveda@gmail.com</span>
                 <span style="display:block; font-size:0.7rem; color:#cbd5e1;">Email Support</span>
             </a>
-            <a href="tel:+919220251059" class="dh-qb-card">
+            <a href="tel:+919318445297" class="dh-qb-card">
                 <i class="bi bi-telephone" style="font-size:1.4rem; display:block; margin-bottom:6px;"></i>
-                <span style="font-size:0.8rem; font-weight:700;">+91 9220251059</span>
+                <span style="font-size:0.8rem; font-weight:700;">+91 9318445297</span>
                 <span style="display:block; font-size:0.7rem; color:#cbd5e1;">Mon - Sat (10am - 7pm)</span>
             </a>
             <a href="{{ route('contact') }}" class="dh-qb-card">

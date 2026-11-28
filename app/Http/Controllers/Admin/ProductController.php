@@ -219,12 +219,22 @@ class ProductController extends Controller
         foreach ($raw as $pack) {
             $name = trim($pack['name'] ?? '');
             if ($name !== '') {
+                $qty = max(1, (int)($pack['quantity'] ?? 1));
+                $mult = !empty($pack['multiplier']) ? round((float)$pack['multiplier'], 3) : 1.0;
+                $custom = (!empty($pack['custom_price']) && (float)$pack['custom_price'] > 0) ? round((float)$pack['custom_price'], 2) : null;
+
+                // Safeguard: If an admin enters 15 into custom price thinking 15% discount, convert to discount multiplier
+                if ($custom !== null && $custom <= 50) {
+                    $mult = round($qty * (1 - ($custom / 100)), 3);
+                    $custom = null;
+                }
+
                 $cleaned[] = [
                     'name'         => $name,
                     'badge'        => trim($pack['badge'] ?? ''),
-                    'quantity'     => max(1, (int)($pack['quantity'] ?? 1)),
-                    'multiplier'   => !empty($pack['multiplier']) ? round((float)$pack['multiplier'], 3) : 1.0,
-                    'custom_price' => (!empty($pack['custom_price']) && (float)$pack['custom_price'] > 0) ? round((float)$pack['custom_price'], 2) : null,
+                    'quantity'     => $qty,
+                    'multiplier'   => $mult,
+                    'custom_price' => $custom,
                 ];
             }
         }

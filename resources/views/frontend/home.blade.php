@@ -1570,7 +1570,7 @@
      ======================================================== -->
 <section class="dh-doctor-endorsement-section">
     <div class="dh-doctor-banner-wrap">
-        <img src="{{ asset('images/doctor_endorsement_banner_hd.png') }}" 
+        <img src="{{ asset('images/doctor_endorsement_banner_hd.jpg') }}?v={{ file_exists(public_path('images/doctor_endorsement_banner_hd.jpg')) ? filemtime(public_path('images/doctor_endorsement_banner_hd.jpg')) : 1 }}" 
              alt="Recommended By Health Professionals - We Are An Honest Ayurveda Brand" 
              class="dh-doctor-banner-img"
              loading="lazy">
@@ -1821,7 +1821,7 @@
                     <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
                     <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter-x"></i></a>
                     <a href="https://pinterest.com" target="_blank"><i class="bi bi-pinterest"></i></a>
-                    <a href="mailto:support@dhuria.com"><i class="bi bi-envelope"></i></a>
+                    <a href="mailto:dhuriaayurveda@gmail.com"><i class="bi bi-envelope"></i></a>
                 </div>
                 <div class="dh-sp-pincode">
                     <span>Delivery:</span>
@@ -1933,7 +1933,7 @@
                     <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
                     <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter-x"></i></a>
                     <a href="https://pinterest.com" target="_blank"><i class="bi bi-pinterest"></i></a>
-                    <a href="mailto:support@dhuria.com"><i class="bi bi-envelope"></i></a>
+                    <a href="mailto:dhuriaayurveda@gmail.com"><i class="bi bi-envelope"></i></a>
                 </div>
                 <div class="dh-sp-pincode">
                     <span>Delivery:</span>

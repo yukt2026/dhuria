@@ -67,8 +67,8 @@
                 <div class="dhuria-brand-socials">
                     <a href="{{ \App\Models\Setting::get('social_instagram', 'https://www.instagram.com/ayurvedadhuria/') }}" target="_blank" class="dhuria-bs-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
                     <a href="{{ \App\Models\Setting::get('social_facebook', 'https://www.facebook.com/profile.php?id=61594745097448') }}" target="_blank" class="dhuria-bs-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="https://wa.me/919220251059" target="_blank" class="dhuria-bs-icon" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-                    <a href="mailto:floramade517@gmail.com" class="dhuria-bs-icon" title="Email"><i class="bi bi-envelope"></i></a>
+                    <a href="https://wa.me/{{ \App\Models\Setting::get('whatsapp_number', '919318445297') }}" target="_blank" class="dhuria-bs-icon" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    <a href="mailto:{{ \App\Models\Setting::get('site_email', 'dhuriaayurveda@gmail.com') }}" class="dhuria-bs-icon" title="Email"><i class="bi bi-envelope"></i></a>
                 </div>
             </div>
 
@@ -100,15 +100,15 @@
                 <h4 class="dhuria-f-title">CONTACT US</h4>
                 <div class="dhuria-contact-item">
                     <span class="dhuria-c-label">Email</span>
-                    <a href="mailto:floramade517@gmail.com" class="dhuria-c-val">floramade517@gmail.com</a>
+                    <a href="mailto:{{ \App\Models\Setting::get('site_email', 'dhuriaayurveda@gmail.com') }}" class="dhuria-c-val">{{ \App\Models\Setting::get('site_email', 'dhuriaayurveda@gmail.com') }}</a>
                 </div>
                 <div class="dhuria-contact-item">
                     <span class="dhuria-c-label">Phone Helpline</span>
-                    <a href="tel:+919220251059" class="dhuria-c-val">+91 9220251059</a>
+                    <a href="tel:{{ \App\Models\Setting::get('site_phone', '+91 9318445297') }}" class="dhuria-c-val">{{ \App\Models\Setting::get('site_phone', '+91 9318445297') }}</a>
                 </div>
                 <div class="dhuria-contact-item">
                     <span class="dhuria-c-label">Location</span>
-                    <span class="dhuria-c-val">Delhi, India</span>
+                    <span class="dhuria-c-val">{{ \App\Models\Setting::get('site_address', 'Delhi, India') }}</span>
                 </div>
                 <div class="dhuria-contact-item">
                     <span class="dhuria-c-label">Timings</span>
@@ -130,7 +130,7 @@
 </footer>
 
 <!-- Floating WhatsApp Action Button -->
-<a href="https://wa.me/919220251059?text=Hello%20Dhuria%20Healthcare,%20I%20have%20an%20inquiry%20regarding%20products" target="_blank" class="dhuria-float-whatsapp" title="Chat on WhatsApp">
+<a href="https://wa.me/{{ \App\Models\Setting::get('whatsapp_number', '919318445297') }}?text=Hello%20Dhuria%20Healthcare,%20I%20have%20an%20inquiry%20regarding%20products" target="_blank" class="dhuria-float-whatsapp" title="Chat on WhatsApp">
     <i class="bi bi-whatsapp"></i>
 </a>
 

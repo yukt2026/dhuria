@@ -1348,8 +1348,13 @@ function selectPack(packQty, multiplier, el, customPrice, packIdx) {
     selectedPackIndex = (typeof packIdx !== 'undefined') ? packIdx : 0;
 
     let newSale = 0;
+    // Defensive check: if customPrice is <= 50 and baseSalePrice >= 100, it's a discount percentage
     if (customPrice && customPrice > 0) {
-        newSale = Math.round(customPrice);
+        if (customPrice <= 50 && baseSalePrice >= 100) {
+            newSale = Math.round(baseSalePrice * packQty * (1 - (customPrice / 100)));
+        } else {
+            newSale = Math.round(customPrice);
+        }
     } else {
         newSale = Math.round(baseSalePrice * multiplier);
     }

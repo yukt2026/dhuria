@@ -625,7 +625,7 @@
     }
 
     .dh-sidebar-head {
-      padding: 10px 16px;
+      padding: 14px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -635,22 +635,24 @@
     .dh-sidebar-brand {
       display: flex;
       flex-direction: column;
-      gap: 0;
+      align-items: flex-start;
+      gap: 3px;
     }
     .dh-sidebar-logo {
-      height: 24px;
+      height: 26px;
       width: auto;
       object-fit: contain;
-      margin-top: -2px;
+      display: block;
+      margin: 0;
     }
     .dh-sidebar-tag {
-      font-size: 7.5px;
+      font-size: 8px;
       font-weight: 800;
       letter-spacing: 0.16em;
       color: #d4af37;
       text-transform: uppercase;
-      margin-top: 1px;
-      line-height: 1;
+      margin: 0;
+      line-height: 1.2;
     }
     .dh-sidebar-close-btn {
       width: 30px;
@@ -951,10 +953,10 @@
 
     <div class="flora-top-right">
       <span>Get in touch with us</span>
-      <a href="tel:{{ \App\Models\Setting::get('site_phone', '+91 9259449933') }}" class="flora-top-contact-link" title="Call Us">
+      <a href="tel:{{ \App\Models\Setting::get('site_phone', '+91 9318445297') }}" class="flora-top-contact-link" title="Call Us">
         <i class="bi bi-telephone-fill" style="color:var(--fl-gold);"></i>
       </a>
-      <a href="mailto:{{ \App\Models\Setting::get('site_email', 'contact@dhuria.com') }}" class="flora-top-contact-link" title="Email Us">
+      <a href="mailto:{{ \App\Models\Setting::get('site_email', 'dhuriaayurveda@gmail.com') }}" class="flora-top-contact-link" title="Email Us">
         <i class="bi bi-envelope-fill" style="color:var(--fl-gold);"></i>
       </a>
     </div>
@@ -1290,11 +1292,11 @@
 
       <!-- Quick Support Box inside Sidebar -->
       <div class="dh-sb-support-box">
-        <a href="https://wa.me/919220251059?text=Hello%20Dhuria%20Healthcare,%20I%20would%20like%20to%20consult%20an%20Ayurvedic%20Practitioner" target="_blank" class="dh-sb-wa-btn">
+        <a href="https://wa.me/{{ \App\Models\Setting::get('whatsapp_number', '919318445297') }}?text=Hello%20Dhuria%20Healthcare,%20I%20would%20like%20to%20consult%20an%20Ayurvedic%20Practitioner" target="_blank" class="dh-sb-wa-btn">
           <i class="bi bi-whatsapp"></i> Chat with Ayurvedic Doctor
         </a>
-        <a href="tel:+919220251059" class="dh-sb-phone-link">
-          <i class="bi bi-telephone-fill text-amber-400"></i> Helpline: +91 9220251059
+        <a href="tel:{{ \App\Models\Setting::get('site_phone', '+91 9318445297') }}" class="dh-sb-phone-link">
+          <i class="bi bi-telephone-fill text-amber-400"></i> Helpline: {{ \App\Models\Setting::get('site_phone', '+91 9318445297') }}
         </a>
         <div style="font-size: 9px; color: #64748b; margin-top: 8px; letter-spacing: 0.5px; text-transform: uppercase;">
           100% Ayurvedic &bull; AYUSH Standard

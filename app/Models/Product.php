@@ -26,10 +26,17 @@ class Product extends Model
                 $badge = $p['badge'] ?? '';
                 $customPrice = (!empty($p['custom_price']) && (float)$p['custom_price'] > 0) ? (float)$p['custom_price'] : null;
                 $multiplier = isset($p['multiplier']) && (float)$p['multiplier'] > 0 ? (float)$p['multiplier'] : null;
-                if ($multiplier === null) {
+
+                // Defensive fallback: If customPrice is <= 50 on a product with price >= 100, treat it as percentage discount
+                if ($customPrice !== null && $customPrice <= 50 && (float)$this->price >= 100) {
+                    $discountPercent = $customPrice;
+                    $customPrice = null;
+                    $multiplier = round($qty * (1 - ($discountPercent / 100)), 3);
+                } elseif ($multiplier === null) {
                     $discountPercent = (float)($p['discount_percent'] ?? 0);
                     $multiplier = round($qty * (1 - ($discountPercent / 100)), 3);
                 }
+
                 $formatted[] = [
                     'name' => $name,
                     'badge' => $badge,

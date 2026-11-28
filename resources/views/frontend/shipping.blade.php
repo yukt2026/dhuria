@@ -106,14 +106,14 @@
         <h3 style="font-family:'Cinzel',serif; font-size:1.8rem; font-weight:800; color:#fff; margin:0 0 8px 0;">Still have questions?</h3>
         <p style="font-size:0.9rem; color:#cbd5e1; margin-bottom:25px;">Track your parcel or inquire about shipping schedules.</p>
         <div class="dh-qb-grid">
-            <a href="mailto:floramade517@gmail.com" class="dh-qb-card">
+            <a href="mailto:dhuriaayurveda@gmail.com" class="dh-qb-card">
                 <i class="bi bi-envelope" style="font-size:1.4rem; display:block; margin-bottom:6px;"></i>
-                <span style="font-size:0.8rem; font-weight:700;">floramade517@gmail.com</span>
+                <span style="font-size:0.8rem; font-weight:700;">dhuriaayurveda@gmail.com</span>
                 <span style="display:block; font-size:0.7rem; color:#cbd5e1;">Email Support</span>
             </a>
-            <a href="tel:+919220251059" class="dh-qb-card">
+            <a href="tel:+919318445297" class="dh-qb-card">
                 <i class="bi bi-telephone" style="font-size:1.4rem; display:block; margin-bottom:6px;"></i>
-                <span style="font-size:0.8rem; font-weight:700;">+91 9220251059</span>
+                <span style="font-size:0.8rem; font-weight:700;">+91 9318445297</span>
                 <span style="display:block; font-size:0.7rem; color:#cbd5e1;">Mon - Sat (10am - 7pm)</span>
             </a>
             <a href="{{ route('contact') }}" class="dh-qb-card">

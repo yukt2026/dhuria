@@ -359,7 +359,7 @@
                                     <span>Secure Checkout: 256-Bit SSL Encrypted Payment</span>
                                 </p>
                                 <p class="text-[11px] text-slate-400">
-                                    NEED HELP? Contact Support at <a href="tel:+919220251059" class="text-amber-400 font-bold hover:underline">+91 9220251059</a>
+                                    NEED HELP? Contact Support at <a href="tel:{{ \App\Models\Setting::get('site_phone', '+91 9318445297') }}" class="text-amber-400 font-bold hover:underline">{{ \App\Models\Setting::get('site_phone', '+91 9318445297') }}</a>
                                 </p>
                             </div>
 
